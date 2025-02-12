@@ -1,2 +1,2 @@
-# CS224N-Assignment-4
-store project files to complete assignment of CS224N winter 2023
+# NMT Assignment
+Note: Heavily inspired by the https://github.com/pcyin/pytorch_basic_nmt repository
