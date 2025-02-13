@@ -24,11 +24,13 @@ print("start punkt downloading...")
 
 
 def ensure_punkt_downloaded():
-    if not nltk.data.find('tokenizers/punkt'):
-        print("Downloading 'punkt' tokenizer...")
-        nltk.download('punkt')
-    else:
+    try:
+        nltk.data.find('tokenizers/punkt')
         print("'punkt' tokenizer already downloaded.")
+    except LookupError:
+        print("Downloading 'punkt' tokenizer...")
+        nltk.download('punkt', quiet=True)  # Use quiet=True to suppress unnecessary output
+        print("'punkt' tokenizer downloaded successfully.")
  
 # 在程序开始时调用
 ensure_punkt_downloaded()
